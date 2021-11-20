@@ -20,6 +20,7 @@ function gerarCertificado(){
         <p class="assistirvideo"><strong>CLIQUE AQUI</strong> PARA ASSISTIR</p>
     </div>
 </a>`
+titleCert.innerHTML = `<title>${nomeVideo}</title>`
 }
 
 function calculoAno(){
