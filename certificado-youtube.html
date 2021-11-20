@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/certificado.css">
+    <script src="certificado.js"></script>
+    <title>Certificado Youtube</title>
+</head>
+<body>
+    <header>
+        <div class="no-print">
+            <div>
+                <input type="text" placeholder="Nome completo" name="" id="nomeC">
+                <input type="text" placeholder="Vídeo" name="" id="nomeV">
+                <input type="text" placeholder="Nome do Canal" name="" id="nomeCanal">
+                <input type="text" name="" placeholder="Duração" id="duration">
+                <input type="text" name="" placeholder="Insira o link do video" id="lvideo">
+                <input type="button" value="Enviar" onclick="gerarCertificado()">
+                
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="fundo-image">
+           <div class="ctc titleeSubtitle">
+               <h1>CERTIFICADO</h1>
+               <h2>VIDEO AULA ONLINE</h2>
+           </div>
+           <div class="ctc certificamos">
+               <p class="descrVideo">Certifico que, eu:</p>
+               <h1 id="NomeComplete">GLEITON APARECIDO SOARES DE SOUZA</h1>
+           </div>
+           <div id="descCurso">
+            <div  class="ctc descrVideo">
+                <p>participei da vídeo aula gravada Online: <strong>${nomeVideo}</strong>, com duração de ${duracaoCurso}, assistindo e participando, realizando no dia <strong>${dataH}.</strong> Produzida e publicada no canal do Youtube: <strong>${duracaoCurso}.</strong> <br>
+                <p class="assistirvideo">https://salamineira.com</p></p>
+            </div>
+           </div>
+           <div class="pePaAss">
+               <div id="acessarVideos">
+                   <a href="">
+                       <div class="ctc patrocionio">
+                           <p>Distribuição Gratuita via</p>
+                           <img style="width: 150px;" src="/src/logo-youtube.png" alt="">
+                           <p class="assistirvideo"><strong>CLIQUE AQUI</strong> PARA ASSISTIR</p>
+                       </div>
+                   </a>
+               </div>
+               <div class="assinaturaG">
+                   <div class="minhaAssinatura">  
+                       <img class="imgassinatura" src="/src/assinatura-teen.png" alt="">
+                   </div>
+                        <div class="assinar">
+                            <div>_____________________________</div>
+                            <p>GLEITON APARECIDO SOARES DE SOUZA</p>
+                        </div>
+               </div>
+           </div>
+           <div class="ctc">
+               <h3 id="dateH">BRASIL, 19 DE NOVEMBRO DE 2021</h3>
+           </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
