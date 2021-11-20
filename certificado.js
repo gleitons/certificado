@@ -9,10 +9,10 @@ function gerarCertificado(){
 
     NomeComplete.innerHTML = `${nomeCompleto}`
     descCurso.innerHTML = `<div  class="ctc descrVideo">
-    <p>participei da vídeo aula gravada Online: <strong>${nomeVideo}</strong>, com duração de <strong>${duracaoCurso}.</strong>, assistindo e participando, realizando no dia <strong>${dataH}.</strong> Produzida e publicada no canal do Youtube: <strong>${nomeCanal}.</strong> <br>
+    <p>participei da vídeo aula gravada Online: <strong>${nomeVideo}</strong>, com duração de <strong>${duracaoCurso}.</strong>, assistindo e participando, realizando no dia <strong>${dataH}.</strong> Produzida e publicada no canal do Youtube: <a href="${linkVideo}" target="_blank"><strong>${nomeCanal}.</strong></a> <br>
     <p class="assistirvideo">${linkVideo}</p></p>
 </div>`
-    dateH.innerHTML = `<strong>${dataH}.</strong>`
+    dateH.innerHTML = `<strong>BRASIL, ${dataH}.</strong>`
     acessarVideos.innerHTML = `<a href="${linkVideo}" target="_blank">
     <div class="ctc patrocionio">
         <p>Distribuição Gratuita via</p>
@@ -24,7 +24,7 @@ function gerarCertificado(){
 
 function calculoAno(){
     let data = new Date();
-    let dia = data.getDay();
+    let dia = data.getUTCDate();
     let mesS = data.getMonth();
     let ano = data.getFullYear();
     if (mesS == "0") {
