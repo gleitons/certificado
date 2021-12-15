@@ -1,26 +1,86 @@
 function gerarCertificado(){
+    // let nomeCompleto = "GLEITON APARECIDO SOARES DE SOUZA";
     let nomeCompleto = document.getElementById('nomeC').value.toUpperCase();
+    let assinaCompleto = document.getElementById('nomeC').value.toLowerCase();
+    
     let nomeVideo = document.getElementById('nomeV').value.toUpperCase();
     let nomeCanal = document.getElementById('nomeCanal').value.toUpperCase();
-    let duracaoCurso = document.getElementById('duration').value;
+    //let duracaoCurso = document.getElementById('duration').value;
     let linkVideo = document.getElementById('lvideo').value;
+    let hora = document.getElementById('hora').value;
+    let minutos = document.getElementById('minutos').value;
+    let segundos = document.getElementById('segundos').value;
     let dataH = calculoAno();
-  
+    // if (nomeCompleto.lenght <= 0){
+    //     var nomeCompleto = "GLEITON APARECIDO SOARES DE SOUZA";
+    // }
+    if (hora > 0) {
+        var duracaoV = `${hora} hora(s), ${minutos} minutos e ${segundos} segundos`
+    } else {
+        var duracaoV = `${minutos} minutos e ${segundos} segundos`;
+    };
+    
 
-    NomeComplete.innerHTML = `${nomeCompleto}`
-    descCurso.innerHTML = `<div  class="ctc descrVideo">
-    <p>participei da vídeo aula gravada Online: <strong>${nomeVideo}</strong>, com duração de <strong>${duracaoCurso}.</strong>, assistindo e participando, realizando no dia <strong>${dataH}.</strong> Produzida e publicada no canal do Youtube: <a href="${linkVideo}" target="_blank"><strong>${nomeCanal}.</strong></a> <br>
-    <p class="assistirvideo">${linkVideo}</p></p>
-</div>`
-    dateH.innerHTML = `<strong>BRASIL, ${dataH}.</strong>`
-    acessarVideos.innerHTML = `<a href="${linkVideo}" target="_blank">
-    <div class="ctc patrocionio">
-        <p>Distribuição Gratuita via</p>
-        <img style="width: 150px;" src="/src/logo-youtube.png" alt="">
-        <p class="assistirvideo"><strong>CLIQUE AQUI</strong> PARA ASSISTIR</p>
+  
+    certificadoMostrar.innerHTML = `<div class="fundo-image imprimirC">
+    <div class="ctc titleeSubtitle">
+        <h1>CERTIFICADO</h1>
+        <h2>VIDEO AULA ONLINE</h2>
     </div>
-</a>`
-titleCert.innerHTML = `<title>${nomeVideo}</title>`
+    <div class="ctc certificamos">
+        <p class="descrVideo">Certifico que, eu:</p>
+        <h1 id="NomeComplete">${nomeCompleto}</h1>
+    </div>
+    <div id="descCurso">
+     <div  class="ctc descrVideo">
+         <p>participei da vídeo aula gravada Online: <strong>${nomeVideo}</strong>, com duração de ${duracaoV}, assistindo e participando, realizando no dia <strong>${dataH}.</strong> Produzida e publicada no canal do Youtube: <strong>${nomeCanal}.</strong> <br>
+         <p class="assistirvideo">${linkVideo}</p></p>
+     </div>
+    </div>
+    <div class="pePaAss">
+        <div id="acessarVideos">
+            <a href="">
+                <div class="ctc patrocionio">
+                    <p>Distribuição Gratuita via</p>
+                    <img style="width: 150px;" src="/src/logo-youtube.png" alt="">
+                    <p class="assistirvideo"><strong>CLIQUE AQUI</strong> PARA ASSISTIR</p>
+                </div>
+            </a>
+        </div>
+        <div class="assinaturaG">
+            <div class="minhaAssinatura">  
+                <!-- <img class="imgassinatura" src="/src/assinatura-teen.png" alt=""> -->
+                <p class="assina">${assinaCompleto}</p>
+            </div>
+                 <div class="assinar">
+                     <div>_____________________________</div>
+                     <p>${nomeCompleto}</p>
+                 </div>
+        </div>
+    </div>
+    <div class="ctc">
+        <h3 id="dateH">BRASIL, ${dataH}</h3>
+    </div>
+ </div>`;
+ alert('CERTIFICADO GERADO COM SUCESSO! CLIQUE EM IMPRIMIR');
+ const apareceBotao = document.getElementById('btnImprimir');
+ apareceBotao.classList.replace('BimprimirC', 'botaoGerar');
+ 
+ 
+//     NomeComplete.innerHTML = `${nomeCompleto}`
+//     descCurso.innerHTML = `<div  class="ctc descrVideo">
+//     <p>participei da vídeo aula gravada Online: <strong>${nomeVideo}</strong>, com duração de <strong>${duracaoCurso}.</strong>, assistindo e participando, realizando no dia <strong>${dataH}.</strong> Produzida e publicada no canal do Youtube: <a href="${linkVideo}" target="_blank"><strong>${nomeCanal}.</strong></a> <br>
+//     <p class="assistirvideo">${linkVideo}</p></p>
+// </div>`
+//     dateH.innerHTML = `<strong>BRASIL, ${dataH}.</strong>`
+//     acessarVideos.innerHTML = `<a href="${linkVideo}" target="_blank">
+//     <div class="ctc patrocionio">
+//         <p>Distribuição Gratuita via</p>
+//         <img style="width: 150px;" src="/src/logo-youtube.png" alt="">
+//         <p class="assistirvideo"><strong>CLIQUE AQUI</strong> PARA ASSISTIR</p>
+//     </div>
+// </a>`
+// titleCert.innerHTML = `<title>${nomeVideo}</title>`
 }
 
 function calculoAno(){
@@ -54,6 +114,10 @@ function calculoAno(){
         var mes = "DEZEMBRO"
     }
 
-    let datahoje = `${dia} DE ${mes} DE ${ano}`
+    let datahoje = `${dia-1} DE ${mes} DE ${ano}`
     return datahoje;
+}
+function imprimir(){
+    
+    window.print();
 }

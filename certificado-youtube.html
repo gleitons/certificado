@@ -11,61 +11,45 @@
     </div>
 </head>
 <body>
-    <header>
-        <div class="no-print">
-            <div>
-                <input type="text" placeholder="Nome completo" name="" id="nomeC">
-                <input type="text" placeholder="Vídeo" name="" id="nomeV">
-                <input type="text" placeholder="Nome do Canal" name="" id="nomeCanal">
-                <input type="text" name="" placeholder="Duração" id="duration">
-                <input type="text" name="" placeholder="Insira o link do video" id="lvideo">
-                <input type="button" value="Enviar" onclick="gerarCertificado()">
+    <header class="no-print">
+        <div >
+            <img style="width: 150px; margin: auto;" src="/src/logo-youtube.png" alt="">
+            <div class="formularioCurso">
+                <h1>GARANTA SEU CERTIFICADO DO YOUTUBE GRÁTIS</h1>
                 
+                <h2>Preencha os dados abaixo e clique em gerar certificado</h2>
+                <table class="insiraDados">
+                    <tr>
+                        <td>NOME COMPLETO:</td>
+                        <td><input type="text" placeholder="Nome completo" name="" id="nomeC"><br></td>
+                    </tr>
+                    <tr>
+                        <td>VÍDEO ASSISTIDO:</td>
+                        <td><input type="text" placeholder="Nome do vídeo assistido" name="" id="nomeV"><br></td>
+                    </tr>
+                    <tr>
+                        <td>NOME DO CANAL:</td>
+                        <td><input type="text" placeholder="Nome do Canal" name="" id="nomeCanal"><br></td>
+                    </tr>
+                    <tr>
+                        <td>DURAÇÃO:</td>
+                        <td><input class="sepa" type="text" name="" placeholder="Horas" id="hora"><input class="sepa" type="text" name="" placeholder="Minutos" id="minutos"><input class="sepa" type="text" name="" placeholder="segundos" id="segundos"></td>
+                    </tr>
+                    <tr>
+                        <td>LINK DO VÍDEO:</td>
+                        <td><input type="text" name="" placeholder="Insira o link do video" id="lvideo"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="botaoGerar" type="button" value="GERAR CERTIFICADO" onclick="gerarCertificado()"></td>
+                        <td><input style="background-color: green;" class="BimprimirC" id="btnImprimir" type="button" value="IMPRIMIR" onclick="imprimir()"></td>
+                    </tr>
+                </table>                
             </div>
 
         </div>
     </header>
-    <main>
-        <div class="fundo-image">
-           <div class="ctc titleeSubtitle">
-               <h1>CERTIFICADO</h1>
-               <h2>VIDEO AULA ONLINE</h2>
-           </div>
-           <div class="ctc certificamos">
-               <p class="descrVideo">Certifico que, eu:</p>
-               <h1 id="NomeComplete">GLEITON APARECIDO SOARES DE SOUZA</h1>
-           </div>
-           <div id="descCurso">
-            <div  class="ctc descrVideo">
-                <p>participei da vídeo aula gravada Online: <strong>${nomeVideo}</strong>, com duração de ${duracaoCurso}, assistindo e participando, realizando no dia <strong>${dataH}.</strong> Produzida e publicada no canal do Youtube: <strong>${duracaoCurso}.</strong> <br>
-                <p class="assistirvideo">https://salamineira.com</p></p>
-            </div>
-           </div>
-           <div class="pePaAss">
-               <div id="acessarVideos">
-                   <a href="">
-                       <div class="ctc patrocionio">
-                           <p>Distribuição Gratuita via</p>
-                           <img style="width: 150px;" src="/src/logo-youtube.png" alt="">
-                           <p class="assistirvideo"><strong>CLIQUE AQUI</strong> PARA ASSISTIR</p>
-                       </div>
-                   </a>
-               </div>
-               <div class="assinaturaG">
-                   <div class="minhaAssinatura">  
-                       <img class="imgassinatura" src="/src/assinatura-teen.png" alt="">
-                   </div>
-                        <div class="assinar">
-                            <div>_____________________________</div>
-                            <p>GLEITON APARECIDO SOARES DE SOUZA</p>
-                        </div>
-               </div>
-           </div>
-           <div class="ctc">
-               <h3 id="dateH">BRASIL, 19 DE NOVEMBRO DE 2021</h3>
-           </div>
-        </div>
-    </main>
+    <div id="certificadoMostrar"></div>
+    
     <footer>
         
 
