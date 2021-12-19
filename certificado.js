@@ -62,6 +62,7 @@ function gerarCertificado(){
         <h3 id="dateH">BRASIL, ${dataH}</h3>
     </div>
  </div>`;
+ titleCert.innerHTML = `<title>CERTIFICADO ${nomeCompleto} - ${nomeVideo} REALIZADO DIA ${dataH}</title>`
  alert('CERTIFICADO GERADO COM SUCESSO! CLIQUE EM IMPRIMIR');
  const apareceBotao = document.getElementById('btnImprimir');
  apareceBotao.classList.replace('BimprimirC', 'botaoGerar');
