@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Chave</title>
+</head>
+<body>
+    <div id="mostra"></div>
+
+
+    <script>
+        const rand=()=>Math.random(0).toString(36).substr(2);
+        const token=(length)=>(rand()+rand()+rand()+rand()).substr(0,length);
+        var prefix = "CERT_";
+        var completeToken = prefix+token(13).toUpperCase()+token(2);
+
+        mostra.innerHTML = `${completeToken}`;
+    </script>
+</body>
+</html>
